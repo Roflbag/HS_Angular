@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="HearthStone_wiki">
+<head>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-route.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	
+</head>
+
+ <body ng-controller="StoreController as store">
+    <!--  Products Container  -->
+    <div class="list-group">
+      <!--  Product Container  -->
+      <div class="list-group-item" ng-repeat="product in store.products">
+        <h3>
+          {{product.name}}
+          <em class="pull-right">{{product.price | currency}}</em>
+        </h3>
+
+        <!-- Image Gallery  -->
+        <div ng-show="product.images.length"class="gallery">
+          <img class="img img-circle img-thumbnail center-block" ng-src="{{product.images[0]}}" />
+          <ul class="clearfix">
+            <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> <img ng-src="{{image}}" width="75" height="40"/> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
+
+
