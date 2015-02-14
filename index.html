@@ -8,24 +8,13 @@
 	
 </head>
 
- <body ng-controller="StoreController as store">
+ <body ng-controller="hsController as hs">
     <!--  Products Container  -->
     <div class="list-group">
       <!--  Product Container  -->
-      <div class="list-group-item" ng-repeat="product in store.products">
-        <h3>
-          {{product.name}}
-          <em class="pull-right">{{product.price | currency}}</em>
-        </h3>
-
-        <!-- Image Gallery  -->
-        <div ng-show="product.images.length"class="gallery">
-          <img class="img img-circle img-thumbnail center-block" ng-src="{{product.images[0]}}" />
-          <ul class="clearfix">
-            <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> <img ng-src="{{image}}" width="75" height="40"/> </li>
-          </ul>
-        </div>
-      </div>
+      
+       
+      
     </div>
   </body>
 
