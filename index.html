@@ -8,13 +8,19 @@
 	
 </head>
 
- <body ng-controller="hsController as hs">
+ <body ng-controller="hsController">
     <!--  Products Container  -->
     <div class="list-group">
       <!--  Product Container  -->
-      
-       
-      
+      <div class="list-group-item" ng-repeat="card in names">
+        <h3>
+          {{card.name}}
+          <em class="pull-right">{{card.faction}}</em>
+        </h3>
+
+        <!-- Image Gallery  -->
+        
+      </div>
     </div>
   </body>
 
