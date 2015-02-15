@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html ng-app="HearthStone_wiki">
 
+<!-- Initiallize Angular -->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-
+<!-- Initiallize other sources -->
 
 <head>
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="custom_icon.css" />
 
-
-	<script type="text/javascript" src="app.js"></script>
-	
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </head>
 
+
 <body ng-controller="hsController">
-  <!--  Products Container  -->
-  <div class="list-group">
-    <!--  Product Container  -->
-    <div class="list-group-item" ng-repeat="card in names">
-      <h3>
-        {{1+1}}
-        {{card.Name}}
-        <em class="pull-right">{{card.Country}}</em>
-      </h3>
+    <!--  Products Container  -->
+    <div class="list-group">
+        <!--  Product Container  -->
+        <ul class="list-group-item" ng-repeat="card in basic" ng-show="showCard(card)">
+            <li>
+                <h3>
+                {{card.name}}
+                </h3>
 
-      <!-- Image Gallery  -->
 
+                <img width="16%" ng-src="http://wow.zamimg.com/images/hearthstone/cards/enus/original/{{card.id}}.png" alt="{{card.name}}">
+
+                <em ng-show="card.attack" class="pull-right">{{card.attack}}<span class="attack_icon">
+                </span></em>
+
+                <em ng-show="card.cost" class="pull-right">{{card.cost}}<span class="mana_icon">
+                </span></em>
+
+            </li>
+
+
+            <!-- Image Gallery  -->
+
+        </ul>
     </div>
-  </div>
 </body>
 
 </html>
-
-
