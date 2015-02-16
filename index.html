@@ -26,15 +26,14 @@
 <body class="main_body" ng-controller="hsController">
 
     <!--  Navbar in controller  -->
+
     <nav class="navbar navbar_custom navbar-fixed-top">
         <div class="navbar_container">
-            <div class="row search">
-                <div class="col-lg-6 ">
+            <div class="row search pull-right">
+                <div class="col-sm-6 ">
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-user"></span>
-
-
-                        <input type="text" ng-model="filterName" class="form-control" placeholder="Filter by Card Name" aria-label="" >
+                        <input type="text" ng-model="filterName" class="form-control" placeholder="Filter by Name" aria-label="">
                         <a class="clear input-group-addon" ng-click="filterName = ''">
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
@@ -44,20 +43,21 @@
                 <!-- /.col-lg-6 -->
                 <!-- Split button -->
 
-                <span class="nullable">
-    <select ng-model="filterRace" >
-      <option value =''>-- Reset --</option>
-      <option value="beast">-- Beast --</option>
-      <option value="demon">-- Demon --</option>
-      <option value="murloc">-- Murloc --</option>
-      <option value="totem">-- Totem --</option>
-    </select>
+                <span class="nullable col-sm-6">
+                <select class="form-control "ng-model="filterRace" >
+                  <option value =''>-- Reset --</option>
+                  <option value="beast">-- Beast --</option>
+                  <option value="demon">-- Demon --</option>
+                  <option value="murloc">-- Murloc --</option>
+                  <option value="totem">-- Totem --</option>
+                </select>
                 </span>
                 <!-- /.col-lg-6 -->
             </div>
             <!-- /.row -->
         </div>
     </nav>
+
     <!-- Navbar ended -->
 
     <div class="list-group">
@@ -65,16 +65,19 @@
             <li class="ugly_repeat">
                 <h3>
                 {{card.name}}
+                
                 </h3>
 
 
                 <img width="16%" ng-src="http://wow.zamimg.com/images/hearthstone/cards/enus/original/{{card.id}}.png" alt="{{card.name}}">
-
+              
                 <em ng-show="card.attack" class="pull-right">{{card.attack}}<span class="attack_icon">
                 </span></em>
 
                 <em ng-show="card.cost" class="pull-right">{{card.cost}}<span class="mana_icon">
                 </span></em>
+
+
 
             </li>
 
