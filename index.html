@@ -67,12 +67,23 @@
                     <h3 class="text-center">
                 {{card.name}}
                 </h3>
+
+
                     <div class="row">
+
                         <div class="col-sm-3 pull-right"><em ng-show="card.attack" class="pull-right">Attack: {{card.attack}}<span class="attack_icon">
                 </span></em>
+                            <em ng-show="card.health" class="pull-right">Health: {{card.health}}<span class="health_icon">
+                </span></em>
+
                             <em ng-show="card.cost" class="pull-right">Cost: {{card.cost}}<span class="mana_icon">
                 </span></em>
+
+
                         </div>
+
+
+
 
                         <div class="col-sm-6"><img width="100%" ng-src="http://wow.zamimg.com/images/hearthstone/cards/enus/original/{{card.id}}.png" alt="{{card.name}}">
                         </div>
