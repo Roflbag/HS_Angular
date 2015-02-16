@@ -19,8 +19,9 @@
     <script type="text/javascript" src="bootstrap/ui/ui-bootstrap-tpls-0.9.0.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
 
-</head>
 
+
+</head>
 
 
 <body class="main_body" ng-controller="hsController">
@@ -61,8 +62,9 @@
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul class="col" ng-repeat="card in basic|filter:{name:filterName, race:filterRace}" ng-show="showCard(card)">
-            <div class="col-sm-6 ">
+        <ul class="col body_ul" ng-repeat="card in basic|filter:{name:filterName, race:filterRace}" ng-show="showCard(card)">
+
+            <div class="col-sm-6">
                 <ul>
                     <h3 class="text-center">
                 {{card.name}}
@@ -71,21 +73,29 @@
 
                     <div class="row">
 
-                        <div class="col-sm-3 pull-right"><em ng-show="card.attack" class="pull-right">Attack: {{card.attack}}<span class="attack_icon">
+                        <div class="col-sm-6 pull-right"><em ng-show="card.attack" class="pull-right">Attack: {{card.attack}}<span class="attack_icon">
                 </span></em>
                             <em ng-show="card.health" class="pull-right">Health: {{card.health}}<span class="health_icon">
                 </span></em>
 
-                            <em ng-show="card.cost" class="pull-right">Cost: {{card.cost}}<span class="mana_icon">
+                            <em ng-show="showZetero(card)" class="pull-right">Cost: {{card.cost}}<span class="mana_icon">
                 </span></em>
 
+ <em ng-show="showZero(card)" class="pull-down">Flavor: {{card.flavor}}</em>
 
                         </div>
 
+                        <!-- Flavor text -->
+                        
+
+
+                           
+                        
 
 
 
                         <div class="col-sm-6"><img width="100%" ng-src="http://wow.zamimg.com/images/hearthstone/cards/enus/original/{{card.id}}.png" alt="{{card.name}}">
+
                         </div>
                     </div>
 

@@ -54,4 +54,12 @@
     horizontal-align: middle;
     float: none;
 }
+
+.main_background {
+    background-color: #6C6666;
+}
+
+.body_ul{
+    margin-top: 11px;
+}
 ;
