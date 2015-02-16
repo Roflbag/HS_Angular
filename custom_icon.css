@@ -62,4 +62,10 @@
 .body_ul{
     margin-top: 11px;
 }
+
+.bottom-align-text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 ;

@@ -64,49 +64,52 @@
 
         <ul class="col body_ul" ng-repeat="card in basic|filter:{name:filterName, race:filterRace}" ng-show="showCard(card)">
 
+            <!-- Card object grid -->
             <div class="col-sm-6">
                 <ul>
                     <h3 class="text-center">
                 {{card.name}}
                 </h3>
-
-
                     <div class="row">
+                        <div class="col-md-6">
 
-                        <div class="col-sm-6 pull-right"><em ng-show="card.attack" class="pull-right">Attack: {{card.attack}}<span class="attack_icon">
-                </span></em>
-                            <em ng-show="card.health" class="pull-right">Health: {{card.health}}<span class="health_icon">
-                </span></em>
-
-                            <em ng-show="showZetero(card)" class="pull-right">Cost: {{card.cost}}<span class="mana_icon">
-                </span></em>
-
- <em ng-show="showZero(card)" class="pull-down">Flavor: {{card.flavor}}</em>
+                            <img width="100%" ng-src="http://wow.zamimg.com/images/hearthstone/cards/enus/original/{{card.id}}.png" alt="{{card.name}}">
 
                         </div>
 
-                        <!-- Flavor text -->
-                        
+                        <div class="col-md-6">
 
+                            <div class="well span6">
+                                <em ng-show="showZeroCost(card)" class="pull-right">Cost: {{card.cost}}<span class="mana_icon">
+                </span></em>
+                            </div>
 
-                           
-                        
+                            <div class="well span6">
+                                <em ng-show="showZeroAttack(card)" class="pull-right">Attack: {{card.attack}}<span class="attack_icon">
+                </span></em>
+                            </div>
 
+                            <div class="well span6">
+                                <em ng-show="card.health" class="pull-right">Health: {{card.health}}<span class="health_icon">
+                </span></em>
+                            </div>
 
+                            <div class="well span6">
+                                <em ng-show="showCard(card)" class="bottom-aligned-text">{{card.flavor}}</em>
 
-                        <div class="col-sm-6"><img width="100%" ng-src="http://wow.zamimg.com/images/hearthstone/cards/enus/original/{{card.id}}.png" alt="{{card.name}}">
+                            </div>
 
                         </div>
                     </div>
-
                 </ul>
             </div>
-
-            <!-- Image Gallery  -->
-
         </ul>
-
     </div>
+
+    <!-- Image Gallery  -->
+
+
+
 </body>
 
 </html>
