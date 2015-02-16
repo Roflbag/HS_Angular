@@ -31,10 +31,13 @@
             <div class="row search">
                 <div class="col-lg-6 ">
                     <div class="input-group">
-                        <span class="input-group-addon glyphicon glyphicon-user">
-       
-      </span>
-                        <input type="text" ng-model="filterName" class="form-control" placeholder="Filter by Card Name" aria-label="">
+                        <span class="input-group-addon glyphicon glyphicon-user"></span>
+
+
+                        <input type="text" ng-model="filterName" class="form-control" placeholder="Filter by Card Name" aria-label="" >
+                        <a class="clear input-group-addon" ng-click="filterName = ''">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
                     </div>
                     <!-- /input-group -->
                 </div>
@@ -42,8 +45,8 @@
                 <!-- Split button -->
 
                 <span class="nullable">
-    <select ng-model="filterRace" ng-init="card.race = card.race">
-      <option value ="">-- Reset --</option>
+    <select ng-model="filterRace" >
+      <option value =''>-- Reset --</option>
       <option value="beast">-- Beast --</option>
       <option value="demon">-- Demon --</option>
       <option value="murloc">-- Murloc --</option>
