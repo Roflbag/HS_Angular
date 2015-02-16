@@ -6,13 +6,18 @@
 	            $scope.basic = response["Basic"];
 	        });
 
-	      $scope.showCard=function(card){
-	      	if(card.collectible===true){
-	      		return true;
-	      	}
-	      	return false;
-	      }
+	    $scope.showCard = function(card) {
+	        if (card.collectible === true) {
+	            return true;
+	        }
+	        return false;
+	    }
+
+	  
 
 
 
-	}
+
+}
+
+

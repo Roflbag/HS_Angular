@@ -5,6 +5,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 <!-- Initiallize other sources -->
+
 <head>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="custom_icon.css" />
@@ -15,28 +16,40 @@
 
 
 
-<body class="main_body" ng-controller="hsController"  >
+<body class="main_body" ng-controller="hsController">
 
-<!--  Navbar in controller  -->
-<nav class="navbar navbar_custom navbar-fixed-top">
-  <div class="navbar_container">
-    <div class="search pull-right">
-    <div class="input-group">
-      <input type="text" ng-model="filterName" class="form-control" placeholder="Search for Name">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+    <!--  Navbar in controller  -->
+    <nav class="navbar navbar_custom navbar-fixed-top">
+        <div class="navbar_container">
+            <div class="row search">
+                <div class="col-lg-6 ">
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-user">
+       
       </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-  </div>
-</nav>
-<!-- Navbar ended -->
+                        <input type="text" ng-model="filterName" class="form-control" placeholder="Filter by Card Name" aria-label="">
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="input-group ">
+                        <span class="input-group-addon glyphicon glyphicon-registration-mark">
+      
+      </span>
+                        <input type="text" ng-model="filterRace" class="form-control" placeholder="Filter by Race" aria-label="...">
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </nav>
+    <!-- Navbar ended -->
 
-    <!--  Products Container  -->
     <div class="list-group">
-        <!--  Product Container  -->
-        <ul class="list-group-item" ng-repeat="card in basic|filter:filterName" ng-show="showCard(card)">
+        <ul class="list-group-item" ng-repeat="card in basic|filter:{name:filterName, race:filterRace}" ng-show="showCard(card)">
             <li>
                 <h3>
                 {{card.name}}
