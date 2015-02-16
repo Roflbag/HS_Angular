@@ -14,8 +14,11 @@
     vertical-align: middle;
     margin-left: 5px;
 }
-li:nth-child(odd) {
+.ugly_repeat{
+    li:nth-child(odd) {
     background: url(media_src/backgroundimg.jpg)no-repeat -19px -31px;
+}
+
 }
 .main_body {
     margin: 49px;

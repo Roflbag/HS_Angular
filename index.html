@@ -2,16 +2,23 @@
 <html ng-app="HearthStone_wiki">
 
 <!-- Initiallize Angular -->
+
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+
+
 <!-- Initiallize other sources -->
 
 <head>
+
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="custom_icon.css" />
 
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/ui/ui-bootstrap-tpls-0.9.0.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
+
 </head>
 
 
@@ -32,15 +39,15 @@
                     <!-- /input-group -->
                 </div>
                 <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-                    <div class="input-group ">
-                        <span class="input-group-addon glyphicon glyphicon-registration-mark">
-      
-      </span>
-                        <input type="text" ng-model="filterRace" class="form-control" placeholder="Filter by Race" aria-label="...">
-                    </div>
-                    <!-- /input-group -->
-                </div>
+                <!-- Split button -->
+
+                <select ng-model="filterRace">
+                    
+                    <option ng-value="">Race</option>
+                    <option ng-value="beast">Beast</option>
+                    <option ng-value="murloc">Murloc</option>
+                    <option ng-value="dragon">Dragon</option>
+                </select>
                 <!-- /.col-lg-6 -->
             </div>
             <!-- /.row -->
@@ -50,7 +57,7 @@
 
     <div class="list-group">
         <ul class="list-group-item" ng-repeat="card in basic|filter:{name:filterName, race:filterRace}" ng-show="showCard(card)">
-            <li>
+            <li class="ugly_repeat">
                 <h3>
                 {{card.name}}
                 </h3>
