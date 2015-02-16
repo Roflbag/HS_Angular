@@ -18,7 +18,6 @@
     li:nth-child(odd) {
     background: url(media_src/backgroundimg.jpg)no-repeat -19px -31px;
 }
-
 }
 .main_body {
     margin: 49px;
@@ -38,5 +37,11 @@
     margin-top: 9px;
     display: inline-block;
     
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
 ;
