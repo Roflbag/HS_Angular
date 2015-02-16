@@ -26,7 +26,9 @@
 	    	return "Beast";
 	    };
 
-
+	    function resetPage(){
+	    	$route.reload();
+	    }
 
 
 	}

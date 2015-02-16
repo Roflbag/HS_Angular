@@ -41,13 +41,15 @@
                 <!-- /.col-lg-6 -->
                 <!-- Split button -->
 
-                <select ng-model="filterRace">
-                    
-                    <option ng-value="">Race</option>
-                    <option ng-value="beast">Beast</option>
-                    <option ng-value="murloc">Murloc</option>
-                    <option ng-value="dragon">Dragon</option>
-                </select>
+                <span class="nullable">
+    <select ng-model="filterRace" ng-init="card.race = card.race">
+      <option value ="">-- Reset --</option>
+      <option value="beast">-- Beast --</option>
+      <option value="demon">-- Demon --</option>
+      <option value="murloc">-- Murloc --</option>
+      <option value="totem">-- Totem --</option>
+    </select>
+                </span>
                 <!-- /.col-lg-6 -->
             </div>
             <!-- /.row -->
