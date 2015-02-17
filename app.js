@@ -5,9 +5,9 @@ app.controller('OtherController', OtherController);
 function hsController($scope, $http) {
 
 
-	$scope.currentPage = 1;
-	$scope.pageSize = 10;
-	
+    $scope.currentPage = 1;
+    $scope.pageSize = 10;
+
 
     $http.get("hs_data.json")
         .success(function(response) {
@@ -42,13 +42,13 @@ function hsController($scope, $http) {
     $scope.reloadRoute = function() {
         $route.reload();
     }
-    
+
 
 
 }
 
 function OtherController($scope) {
-  $scope.pageChangeHandler = function(num) {
-    console.log('going to page ' + num);
-  };
+    $scope.pageChangeHandler = function(num) {
+        console.log('going to page ' + num);
+    };
 }

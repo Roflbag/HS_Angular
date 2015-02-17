@@ -69,8 +69,8 @@
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul ng-show="showCard(card)" class="col body_ul" dir-paginate="card in basic|filter:{name:filterName, race:filterRace}|itemsPerPage:pageSize" current-page="currentPage">
-       
+        <ul class="col body_ul" dir-paginate="card in basic|filter:{name:filterName, race:filterRace}|itemsPerPage:3" current-page="currentPage" ng-show="showCard(card)" >
+
             <!-- Card object grid -->
             <div class="col-sm-6">
                 <ul>
