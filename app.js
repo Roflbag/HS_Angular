@@ -1,10 +1,14 @@
-var app = angular.module('HearthStone_wiki', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('HearthStone_wiki', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination']);
 
-
-
-
+app.controller('OtherController', OtherController);
 
 function hsController($scope, $http) {
+
+
+	$scope.currentPage = 1;
+	$scope.pageSize = 10;
+	
+
     $http.get("hs_data.json")
         .success(function(response) {
             $scope.basic = response["Basic"];
@@ -38,6 +42,13 @@ function hsController($scope, $http) {
     $scope.reloadRoute = function() {
         $route.reload();
     }
+    
 
 
+}
+
+function OtherController($scope) {
+  $scope.pageChangeHandler = function(num) {
+    console.log('going to page ' + num);
+  };
 }

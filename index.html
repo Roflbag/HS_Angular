@@ -18,7 +18,7 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bootstrap/ui/ui-bootstrap-tpls-0.9.0.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
-
+    <script src="dirPagination.js"></script>
 
 
 </head>
@@ -31,8 +31,8 @@
     <nav class="navbar navbar_custom navbar-fixed-top">
         <div class="navbar_container">
 
-        
-        <!-- Button has bug on Chrome>
+
+            <!-- Button has bug on Chrome>
             <a class="navbar_icon pull-left" href="#">
                 <img alt="hsicon" ng-src="media_src/hs_icon.png" height="38px">
             </a>
@@ -69,7 +69,7 @@
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul class="col body_ul" ng-repeat="card in basic|filter:{name:filterName, race:filterRace}" ng-show="showCard(card)">
+        <ul ng-show="showCard(card)" class="col body_ul" dir-paginate="card in basic|itemsPerPage:pageSize|filter:{name:filterName, race:filterRace}" current-page="currentPage">
 
             <!-- Card object grid -->
             <div class="col-sm-6">
@@ -112,7 +112,16 @@
             </div>
         </ul>
     </div>
-
+    <!-- page number sel-->
+    <nav class="navbar navbar_custom navbar-fixed-bottom">
+        <div class="navbar_container">
+            <div ng-controller="OtherController" class="other-controller ">
+                <div class="text-center">
+                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+                </div>
+            </div>
+        </div>
+    </nav>
     <!-- Image Gallery  -->
 
 

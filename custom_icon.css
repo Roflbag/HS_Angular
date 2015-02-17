@@ -14,7 +14,6 @@
     vertical-align: middle;
     margin-left: 5px;
 }
-
 .health_icon {
     display: inline-block;
     background: url(media_src/little_icons.png) no-repeat -19px -16px;
@@ -23,11 +22,10 @@
     vertical-align: middle;
     margin-left: 5px;
 }
-
-.ugly_repeat{
-    li:nth-child(odd) {
-    background: url(media_src/backgroundimg.jpg)no-repeat -19px -31px;
-}
+.ugly_repeat {
+    li: nth-child(odd) {
+        background: url(media_src/backgroundimg.jpg)no-repeat -19px -31px;
+    }
 }
 .main_body {
     margin: 49px;
@@ -45,34 +43,33 @@
 }
 .search {
     margin-top: 9px;
-   width: 60%;
-    
+    width: 60%;
 }
-
 .vcenter {
     display: inline-block;
     horizontal-align: middle;
     float: none;
 }
-
 .main_background {
     background-color: #6C6666;
 }
-
-.body_ul{
+.body_ul {
     margin-top: 11px;
 }
-
 .bottom-align-text {
     position: absolute;
     bottom: 0;
     right: 0;
-  }
-
-.navbar_icon{
-
+}
+.navbar_icon {
     margin-top: 9px;
     display: inline-block;
-    
+}
+.other-controller {
+    margin: -12px;
+    padding: 0px;
+}
+.other-controller small {
+    color: #99c;
 }
 ;
