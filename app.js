@@ -6,7 +6,8 @@ function hsController($scope, $http) {
 
 
     $scope.currentPage = 1;
-    $scope.pageSize = 10;
+    $scope.pageSize = 4;
+
 
 
     $http.get("hs_data.json")
@@ -43,6 +44,14 @@ function hsController($scope, $http) {
         $route.reload();
     }
 
+    $scope.gotoTop = function() {
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash('top');
+
+        // call $anchorScroll()
+        $anchorScroll();
+    }
 
 
 }

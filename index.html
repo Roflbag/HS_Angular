@@ -42,6 +42,11 @@
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-user"></span>
                         <input type="text" ng-model="filterName" class="form-control" placeholder="Filter by Name" aria-label="">
+                        <!--Debugging tool, makes users able to select how many items to display on a page-->
+
+                        <!-- <input type="number" min="1" max="100" class="form-control" ng-model="pageSize"> 
+                        -->
+
                         <a class="clear input-group-addon" ng-click="filterName = ''">
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
@@ -52,8 +57,8 @@
                 <!-- Split button -->
 
                 <span class="nullable col-sm-4">
-                <select class="form-control "ng-model="filterRace" >
-                  <option value =''>-- Reset --</option>
+                <select ng-init="undefined"class="form-control "ng-model="filterRace" >
+                  <option ng-click="filterRace = undefined" >-- Reset Race Filter--</option>
                   <option value="beast">-- Beast --</option>
                   <option value="demon">-- Demon --</option>
                   <option value="murloc">-- Murloc --</option>
@@ -69,7 +74,7 @@
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul class="col body_ul" dir-paginate="card in basic|filter:{name:filterName, race:filterRace}|itemsPerPage:5" current-page="currentPage" ng-show="showCard(card)">
+        <ul class="col body_ul" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, collectible:true}|itemsPerPage:pageSize" current-page="currentPage" ng-show="showCard(card)">
 
             <!-- Card object grid -->
             <div class="col-sm-6 well">
@@ -87,22 +92,22 @@
                         <div class="col-md-4 card-info-wrapper ">
 
                             <ul class="no-dot-ul">
-                            <div class="card-stats-wrapper">
-                                <li class="no-dot-li">
-                                    <em ng-show="showZeroCost(card)" class="">Cost: {{card.cost}}<span class="mana_icon">
+                                <div class="card-stats-wrapper">
+                                    <li class="no-dot-li">
+                                        <em ng-show="showZeroCost(card)" class="">Cost: {{card.cost}}<span class="mana_icon">
                                     </span></em>
-                                </li>
-                                <li class="no-dot-li">
-                                    <em ng-show="showZeroAttack(card)" class="">Attack: {{card.attack}}<span class="attack_icon">
+                                    </li>
+                                    <li class="no-dot-li">
+                                        <em ng-show="showZeroAttack(card)" class="">Attack: {{card.attack}}<span class="attack_icon">
                                     </span></em>
-                                </li>
-                                <li class="no-dot-li">
-                                    <em ng-show="card.health" class="">Health: {{card.health}}<span class="health_icon">
+                                    </li>
+                                    <li class="no-dot-li">
+                                        <em ng-show="card.health" class="">Health: {{card.health}}<span class="health_icon">
                                     </span></em>
-                                </li>
-                           </div>
+                                    </li>
+                                </div>
                                 <li class="no-dot-li">
-                                     <em class="card-flavor-position" ng-show="showCard(card)" class="bottom-aligned-text">{{card.flavor}}</em>
+                                    <em class="card-flavor-position" ng-show="showCard(card)" class="bottom-aligned-text">{{card.flavor}}</em>
                                 </li>
                             </ul>
                         </div>
