@@ -22,13 +22,9 @@
     vertical-align: middle;
     margin-left: 5px;
 }
-.ugly_repeat {
-    li: nth-child(odd) {
-        background: url(media_src/backgroundimg.jpg)no-repeat -19px -31px;
-    }
-}
 .main_body {
     margin: 49px;
+    background: url(media_src/main-body-diagram.jpg);
 }
 .navbar_custom {
     background-color: #6C6666;
@@ -45,14 +41,8 @@
     margin-top: 9px;
     width: 60%;
 }
-.vcenter {
-    display: inline-block;
-    horizontal-align: middle;
-    float: none;
-}
-.main_background {
-    background-color: #6C6666;
-}
+
+
 .body_ul {
     margin-top: 11px;
 }
@@ -71,5 +61,34 @@
 }
 .other-controller small {
     color: #99c;
+}
+.card-info-wrapper {
+    position: relative;
+    display: block;
+    height: 313px;
+}
+.card-flavor-position {
+    position: absolute;
+    left: 0px;
+    bottom: 10%;
+    width: 220px;
+}
+.card-container {
+    display: inline-block;
+}
+.no-dot-ul {
+    list-style-type: none;
+    height: 100%;
+}
+.no-dot-li {
+    list-style-type: none;
+    display: block;
+}
+.card-stats-wrapper {
+    display: block;
+    top: 20%;
+    position: absolute;
+    text-align: right;
+    width: 86px;
 }
 ;
