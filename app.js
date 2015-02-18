@@ -39,21 +39,9 @@ function hsController($scope, $http) {
         return false;
     }
 
-
-    $scope.reloadRoute = function() {
-        $route.reload();
+     $scope.test = function() {
+        console.log('IM HERE');
     }
-
-    $scope.gotoTop = function() {
-        // set the location.hash to the id of
-        // the element you wish to scroll to.
-        $location.hash('top');
-
-        // call $anchorScroll()
-        $anchorScroll();
-    }
-
-
 }
 
 function OtherController($scope) {
