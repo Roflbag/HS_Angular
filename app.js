@@ -6,13 +6,13 @@ function hsController($scope, $http) {
 
 
     $scope.currentPage = 1;
-    $scope.pageSize = 4;
+    $scope.pageSize = 10;
 
 
 
     $http.get("hs_data.json")
         .success(function(response) {
-            $scope.basic = response["Basic"];
+            $scope.basic = response["Basic", "Classic"];
         });
 
     //for ng-show, show collectible cards only
@@ -47,8 +47,18 @@ function hsController($scope, $http) {
     $scope.rarityColor = function(card) {
         if (card.rarity === "Free") {
             return "grey";
-        } else if (card.rarity === "Common")
+        } else if (card.rarity === "Common"){
             return "";
+        }
+        else if (card.rarity === "Rare"){
+        	return "blue";
+        }
+        else if (card. rarity === "Epic"){
+        	return "purple";
+        }
+        else if (card.rarity === "Legendary"){
+        	return "orange";
+        }
     }
 
 
