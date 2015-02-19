@@ -41,8 +41,6 @@
     margin-top: 9px;
     width: 60%;
 }
-
-
 .body_ul {
     margin-top: 11px;
 }
@@ -89,6 +87,9 @@
     top: 20%;
     position: absolute;
     text-align: right;
-    width: 86px;
+    width: 150px;
+}
+em.rarity {
+    display: block;
 }
 ;

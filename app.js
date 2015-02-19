@@ -39,9 +39,18 @@ function hsController($scope, $http) {
         return false;
     }
 
-     $scope.test = function() {
+    $scope.test = function() {
         console.log('IM HERE');
     }
+
+    $scope.rarityColor = function(card) {
+        if (card.rarity === "Free") {
+            return "grey";
+        } else if (card.rarity === "Common")
+            return "";
+    }
+
+
 }
 
 function OtherController($scope) {

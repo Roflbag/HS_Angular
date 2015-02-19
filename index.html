@@ -57,8 +57,8 @@
                 <!-- Split button -->
 
                 <span class="nullable col-sm-4">
-                <select class="form-control "ng-model="filterRace" >
-                  <option ng-click="test()" >-- Reset Race Filter--</option>
+                <select class="form-control" ng-model="filterRace" >
+                  <option ng-click="filterRace = undefined">-- Reset Race Filter--</option>
                   <option value="beast">-- Beast --</option>
                   <option value="demon">-- Demon --</option>
                   <option value="murloc">-- Murloc --</option>
@@ -74,7 +74,7 @@
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul class="col body_ul" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, collectible:true}|itemsPerPage:pageSize" current-page="currentPage" ng-show="showCard(card)">
+        <ul class="col body_ul" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, collectible:true}|itemsPerPage:pageSize" current-page="currentPage">
 
             <!-- Card object grid -->
             <div class="col-sm-6 well">
@@ -104,6 +104,9 @@
                                     <li class="no-dot-li">
                                         <em ng-show="card.health" class="">Health: {{card.health}}<span class="health_icon">
                                     </span></em>
+                                    </li>
+                                    <li class="no-dot-li ">
+                                        <em class="rarity">Rarity: <div ng-style="{'color':rarityColor(card), 'display':'inline'}">{{card.rarity}}</div></em>
                                     </li>
                                 </div>
                                 <li class="no-dot-li">
