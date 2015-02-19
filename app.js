@@ -43,6 +43,7 @@ function hsController($scope, $http) {
         console.log('IM HERE');
     }
 
+    //Changes the Rarity text color based on card.rarity field; ng-style's parameter.
     $scope.rarityColor = function(card) {
         if (card.rarity === "Free") {
             return "grey";
