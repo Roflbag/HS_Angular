@@ -81,7 +81,18 @@
             <div class="col-sm-6 well">
                 <ul>
                     <h3 class="text-center">
-                    {{card.name}} <span ng-class="{'gvg-icon':nameGvgIcon(card), 'naxx-icon':nameNaxxIcon(card)}"> </span>
+                    {{card.name}} <span ng-class="{'gvg-icon':nameGvgIcon(card), 'naxx-icon':nameNaxxIcon(card)}"> </span> 
+
+                    <span ng-class="{'druid-icon': 'Druid'===getClass(card),
+                                     'hunter-icon': 'Hunter'===getClass(card),
+                                     'mage-icon': 'Mage'===getClass(card),
+                                     'pally-icon': 'Paladin'===getClass(card),
+                                     'priest-icon': 'Priest'===getClass(card),
+                                     'rouge-icon': 'Rogue'===getClass(card),
+                                     'shaman-icon': 'Shaman'===getClass(card),
+                                     'warlock-icon': 'Warlock'===getClass(card),
+                                     'warrior-icon': 'Warrior'===getClass(card),
+                                     'no-icon' :undefined===getClass(card)}"></span>
                     </h3>
                     <div class="card-container">
                         <div class="col-md-8 ">

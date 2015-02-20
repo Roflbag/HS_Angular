@@ -16,6 +16,7 @@ function hsController($scope, $http) {
             $scope.basic.push.apply($scope.basic, response["Classic"]);
             $scope.basic.push.apply($scope.basic, response["Curse of Naxxramas"]);
             $scope.basic.push.apply($scope.basic, response["Goblins vs Gnomes"]);
+            console.log($scope.basic);
         });
 
     //for ng-show, show collectible cards only
@@ -78,6 +79,14 @@ function hsController($scope, $http) {
             return false;
         }
     }
+
+    $scope.getClass = function(card) {
+        return card.playerClass;
+    }
+
+
+
+
 
 }
 
