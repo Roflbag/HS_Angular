@@ -63,6 +63,7 @@
                   <option ng-click="filterRace = undefined">-- Reset Race Filter--</option>
                   <option value="beast">-- Beast --</option>
                   <option value="demon">-- Demon --</option>
+                  <option value="dragon">-- Dragon --</option>
                   <option value="murloc">-- Murloc --</option>
                   <option value="totem">-- Totem --</option>
                   <option value="mech">-- Mech --</option>
@@ -120,8 +121,12 @@
                                     </span></em>
                                     </li>
                                     <li class="no-dot-li ">
-                                        <em class="rarity">Rarity: <b><div ng-style="{'color':rarityColor(card), 'display':'inline'}">{{card.rarity}}</div></b></em>
+                                        <em class="">Type: {{card.type}}</em>
                                     </li>
+                                   
+                                    <li class="no-dot-li ">
+                                        <em class="rarity">Rarity: <b><div ng-style="{'color':rarityColor(card), 'display':'inline'}">{{card.rarity}}</div></b></em>
+                                    </li>                          
                                 </div>
                                 <li class="no-dot-li">
                                     <em class="card-flavor-position" ng-show="showCard(card)" class="bottom-aligned-text">{{card.flavor}}</em>
