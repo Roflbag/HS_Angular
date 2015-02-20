@@ -20,7 +20,7 @@
     <script type="text/javascript" src="bootstrap/ui/ui-bootstrap-tpls-0.9.0.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script src="dirPagination.js"></script>
-    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
 
 
 </head>
@@ -70,20 +70,45 @@
                 </select>
                 </span>
                 <!-- /.col-lg-6 -->
+
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" ng-model="filterRace">
+                        Select Race <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a ng-click="filterRace = undefined" >Action</a>
+                        </li>
+                        <li><a href="#">Another action</a>
+                        </li>
+                        <li><a href="#">Something else here</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
             </div>
             <!-- /.row -->
+
+            <!-- Single button -->
+
+
         </div>
     </nav>
 
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul class="col body_ul animation" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, collectible:true}|itemsPerPage:pageSize" current-page="currentPage" >
+        <ul class="col body_ul animation" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, collectible:true}|itemsPerPage:pageSize" current-page="currentPage">
 
             <!-- Card object grid -->
             <div class="col-sm-6 well">
                 <ul>
-                    <h3 class="text-center">
+                    <h2 class="text-center hs-font">
                     {{card.name}} <span ng-class="{'gvg-icon':nameGvgIcon(card), 'naxx-icon':nameNaxxIcon(card)}"> </span> 
 
                     <span ng-class="{'druid-icon': 'Druid'===getClass(card),
@@ -96,7 +121,7 @@
                                      'warlock-icon': 'Warlock'===getClass(card),
                                      'warrior-icon': 'Warrior'===getClass(card),
                                      'no-icon' :undefined===getClass(card)}"></span>
-                    </h3>
+                    </h2>
                     <div class="card-container">
                         <div class="col-md-8 ">
 
@@ -123,10 +148,10 @@
                                     <li class="no-dot-li ">
                                         <em class="">Type: {{card.type}}</em>
                                     </li>
-                                   
+
                                     <li class="no-dot-li ">
                                         <em class="rarity">Rarity: <b><div ng-style="{'color':rarityColor(card), 'display':'inline'}">{{card.rarity}}</div></b></em>
-                                    </li>                          
+                                    </li>
                                 </div>
                                 <li class="no-dot-li">
                                     <em class="card-flavor-position" ng-show="showCard(card)" class="bottom-aligned-text">{{card.flavor}}</em>

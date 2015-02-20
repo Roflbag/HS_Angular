@@ -202,7 +202,7 @@ em.rarity {
 
 /*==================================END OF ICONS=================================================*/
 
-
+/*===================================Animations==================================================*/
 .animation {
   -webkit-transition: 0.5s;
 }
@@ -221,5 +221,16 @@ em.rarity {
 
 .animation.ng-leave.ng-leave-active {
   opacity: 0;
+}
+
+/*==================================END OF ANIMATIONS=================================================*/
+
+@font-face {
+    font-family: bliz-quadrata;
+    src: url(media_src/bliz-quadrata.woff);
+}
+
+.hs-font {
+    font-family: bliz-quadrata;
 }
 
