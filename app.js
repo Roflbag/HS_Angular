@@ -1,4 +1,4 @@
-var app = angular.module('HearthStone_wiki', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination']);
+var app = angular.module('HearthStone_wiki', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngAnimate']);
 
 app.controller('OtherController', OtherController);
 
@@ -81,6 +81,7 @@ function hsController($scope, $http) {
     }
 
     $scope.getClass = function(card) {
+    	
         return card.playerClass;
     }
 

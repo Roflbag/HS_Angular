@@ -5,6 +5,7 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script src="https://code.angularjs.org/1.2.27/angular-animate.js"></script>
 
 
 
@@ -76,7 +77,7 @@
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul class="col body_ul" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, collectible:true}|itemsPerPage:pageSize" current-page="currentPage">
+        <ul class="col body_ul animation" ng-repeat="card in basic|filter:{name:filterName, race:filterRace, collectible:true}" >
 
             <!-- Card object grid -->
             <div class="col-sm-6 well">
