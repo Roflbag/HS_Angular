@@ -91,7 +91,7 @@
                         {{filterClass}} <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a class="text-center" ng-click="filterClass = undefined">Clear Race Filter</a>
+                        <li><a class="text-center" ng-click="filterClass = undefined">Clear Class Filter</a>
                         </li>
                         <li class="divider"></li>
                         <li><a class="text-center" ng-click="filterClass = 'Druid'">Druid - Malfurion Stormrage</a>
@@ -135,7 +135,7 @@
     </nav>
 
     <!-- Navbar ended -->
-    <div class="container">
+    <div class="container ">
 
         <ul class="col body_ul animation" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, playerClass:filterClass, collectible:true}|itemsPerPage:pageSize" current-page="currentPage">
 
