@@ -12,7 +12,7 @@ function hsController($scope, $http) {
 
     $http.get("hs_data.json")
         .success(function(response) {
-            $scope.basic = response["Basic"] ;
+            $scope.basic = response["Basic"];
             $scope.basic.push.apply($scope.basic, response["Classic"]);
             $scope.basic.push.apply($scope.basic, response["Curse of Naxxramas"]);
             $scope.basic.push.apply($scope.basic, response["Goblins vs Gnomes"]);
@@ -50,17 +50,34 @@ function hsController($scope, $http) {
     $scope.rarityColor = function(card) {
         if (card.rarity === "Free") {
             return "grey";
-        } else if (card.rarity === "Common"){
+        } else if (card.rarity === "Common") {
             return "";
-        } else if (card.rarity === "Rare"){
+        } else if (card.rarity === "Rare") {
             return "blue";
-        } else if (card.rarity === "Epic"){
+        } else if (card.rarity === "Epic") {
             return "purple";
-        } else if (card.rarity === "Legendary"){
+        } else if (card.rarity === "Legendary") {
             return "orange";
         }
     }
 
+    //true if the card is from GvG pack by checking if "GVG" is a substring in card.id
+    $scope.nameGvgIcon = function(card) {
+        if (card.id.indexOf("GVG") >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //true if the card is from Naxx pack by checking if "GVG" is a substring in card.id
+    $scope.nameNaxxIcon = function(card) {
+        if (card.id.indexOf("FP") >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }
 
