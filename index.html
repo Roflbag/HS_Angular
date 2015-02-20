@@ -40,7 +40,7 @@
             </a>
             -->
             <div class="row search pull-right ">
-                <div class="col-sm-6 ">
+                <div class="col-sm-4 ">
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-user"></span>
                         <input type="text" ng-model="filterName" class="form-control" placeholder="Filter by Name" aria-label="">
@@ -56,7 +56,7 @@
                     <!-- /input-group -->
                 </div>
 
-                <div class="btn-group">
+                <div class="btn-group col-sm-4 ">
                     <button type="button" class="btn btn-danger">Filter by Race</button>
                     <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" ng-model="filterRace">
                         {{filterRace}} <span class="caret"></span>
@@ -85,6 +85,44 @@
                     </ul>
                 </div>
 
+                <div class="btn-group col-sm-4 ">
+                    <button type="button" class="btn btn-danger">Filter by Class</button>
+                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" ng-model="filterClass">
+                        {{filterClass}} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a class="text-center" ng-click="filterClass = undefined">Clear Race Filter</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a class="text-center" ng-click="filterClass = 'Druid'">Druid - Malfurion Stormrage</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterClass = 'Hunter'">Hunter - Rexxar</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterClass = 'Mage'">Mage - Jaina Proudmoore</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterClass = 'Palladin'">Paladin - Uther the Lightbringer</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterClass = 'Priest'">Priest - Anduin Wrynn</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterClass = 'Rouge'">Rogue - Valeera Sanguinar</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterClass = 'Shaman'">Shaman - Thrall</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterClass = 'Warlock'">Warlock - Gul'dan</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterClass = 'Warrior'">Warrior - Garrosh Hellscream</a>
+                        </li>
+                    </ul>
+                </div>
+
 
 
             </div>
@@ -99,7 +137,7 @@
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul class="col body_ul animation" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, collectible:true}|itemsPerPage:pageSize" current-page="currentPage">
+        <ul class="col body_ul animation" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, playerClass:filterClass, collectible:true}|itemsPerPage:pageSize" current-page="currentPage">
 
             <!-- Card object grid -->
             <div class="col-sm-6 well">
