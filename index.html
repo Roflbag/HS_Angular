@@ -55,36 +55,32 @@
                     </div>
                     <!-- /input-group -->
                 </div>
-                <!-- /.col-lg-6 -->
-                <!-- Split button -->
-
-                <span class="nullable col-sm-4">
-                <select class="form-control" ng-model="filterRace" >
-                  <option ng-click="filterRace = undefined">-- Reset Race Filter--</option>
-                  <option value="beast">-- Beast --</option>
-                  <option value="demon">-- Demon --</option>
-                  <option value="dragon">-- Dragon --</option>
-                  <option value="murloc">-- Murloc --</option>
-                  <option value="totem">-- Totem --</option>
-                  <option value="mech">-- Mech --</option>
-                </select>
-                </span>
-                <!-- /.col-lg-6 -->
-
 
                 <div class="btn-group">
+                    <button type="button" class="btn btn-danger">Filter by Race</button>
                     <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" ng-model="filterRace">
-                        Select Race <span class="caret"></span>
+                        {{filterRace}} <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a ng-click="filterRace = undefined" >Action</a>
-                        </li>
-                        <li><a href="#">Another action</a>
-                        </li>
-                        <li><a href="#">Something else here</a>
+                        <li><a class="text-center" ng-click="filterRace = undefined">Clear Race Filter</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#">Separated link</a>
+                        <li><a class="text-center" ng-click="filterRace = 'Beast'">Beast</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterRace = 'Demon'">Demon</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterRace = 'Dragon'">Dragon</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterRace = 'Murloc'">Murloc</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterRace = 'Totem'">Totem</a>
+                        </li>
+                        </li>
+                        <li><a class="text-center" ng-click="filterRace = 'Mech'">Mech</a>
                         </li>
                     </ul>
                 </div>
