@@ -204,7 +204,7 @@ em.rarity {
 
 
 .animation {
-  -webkit-transition: 1s;
+  -webkit-transition: 0.5s;
 }
 
 .animation.ng-enter {
