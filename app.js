@@ -6,13 +6,16 @@ function hsController($scope, $http) {
 
 
     $scope.currentPage = 1;
-    $scope.pageSize = 10;
+    $scope.pageSize = 4;
 
 
 
     $http.get("hs_data.json")
         .success(function(response) {
-            $scope.basic = response["Basic", "Classic"];
+            $scope.basic = response["Basic"] ;
+            $scope.basic.push.apply($scope.basic, response["Classic"]);
+            $scope.basic.push.apply($scope.basic, response["Curse of Naxxramas"]);
+            $scope.basic.push.apply($scope.basic, response["Goblins vs Gnomes"]);
         });
 
     //for ng-show, show collectible cards only
@@ -43,21 +46,18 @@ function hsController($scope, $http) {
         console.log('IM HERE');
     }
 
-    //Changes the Rarity text color based on card.rarity field; ng-style's parameter.
+    //Changes the Rarity text color based on card.rarity field; ng-style's parameter
     $scope.rarityColor = function(card) {
         if (card.rarity === "Free") {
             return "grey";
         } else if (card.rarity === "Common"){
             return "";
-        }
-        else if (card.rarity === "Rare"){
-        	return "blue";
-        }
-        else if (card. rarity === "Epic"){
-        	return "purple";
-        }
-        else if (card.rarity === "Legendary"){
-        	return "orange";
+        } else if (card.rarity === "Rare"){
+            return "blue";
+        } else if (card.rarity === "Epic"){
+            return "purple";
+        } else if (card.rarity === "Legendary"){
+            return "orange";
         }
     }
 
