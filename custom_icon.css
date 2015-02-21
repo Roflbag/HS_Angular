@@ -26,7 +26,7 @@
     margin: 49px;
     background: url(media_src/main-body-diagram.jpg);
 }
-.inner_body{
+.inner_body {
     background-color: #E1D7BD;
 }
 .navbar_custom {
@@ -40,7 +40,6 @@
     height: 50px;
     top: 50%;
 }
-
 .search {
     margin-top: 9px;
     width: 100%;
@@ -154,48 +153,47 @@ em.rarity {
     vertical-align: middle;
     margin-left: 5px;
 }
-.priest-icon{
+.priest-icon {
     display: inline-block;
-    background: url(media_src/class-icons.png)  no-repeat  -125px 0px;
+    background: url(media_src/class-icons.png) no-repeat -125px 0px;
     width: 25px;
     height: 25px;
     vertical-align: middle;
     margin-left: 5px;
 }
-.rogue-icon{
+.rogue-icon {
     display: inline-block;
-    background: url(media_src/class-icons.png)  no-repeat  -150px 0px;
+    background: url(media_src/class-icons.png) no-repeat -150px 0px;
     width: 25px;
     height: 25px;
     vertical-align: middle;
     margin-left: 5px;
 }
-.shaman-icon{
+.shaman-icon {
     display: inline-block;
-    background: url(media_src/class-icons.png)  no-repeat  -175px 0px;
+    background: url(media_src/class-icons.png) no-repeat -175px 0px;
     width: 25px;
     height: 25px;
     vertical-align: middle;
     margin-left: 5px;
 }
-.warlock-icon{
+.warlock-icon {
     display: inline-block;
-    background: url(media_src/class-icons.png)  no-repeat  -200px 0px;
+    background: url(media_src/class-icons.png) no-repeat -200px 0px;
     width: 25px;
     height: 25px;
     vertical-align: middle;
     margin-left: 5px;
 }
-.warrior-icon{
+.warrior-icon {
     display: inline-block;
-    background: url(media_src/class-icons.png)  no-repeat  -225px 0px;
+    background: url(media_src/class-icons.png) no-repeat -225px 0px;
     width: 25px;
     height: 25px;
     vertical-align: middle;
     margin-left: 5px;
 }
-
-.no-icon{
+.no-icon {
     display: inline-block;
     background: transparent;
     width: 25px;
@@ -203,54 +201,30 @@ em.rarity {
     vertical-align: middle;
     margin-left: 5px;
 }
-
 /*==================================END OF ICONS=================================================*/
-
 /*===================================Animations==================================================*/
-.animation {
-  -webkit-transition: 0.5s;
+
+.fadeInOut {
+    -webkit-transition: 0.5s;
 }
-
-.animation.ng-enter {
-  opacity: 0;
+.fadeInOut.ng-enter {
+    opacity: 0;
 }
-
-.animation.ng-leave {
-  opacity: 1;
+.fadeInOut.ng-leave {
+    opacity: 1;
 }
-
-.animation.ng-enter.ng-enter-active {
-  opacity: 1;
+.fadeInOut.ng-enter.ng-enter-active {
+    opacity: 1;
 }
-
-.animation.ng-leave.ng-leave-active {
-  opacity: 0;
+.fadeInOut.ng-leave.ng-leave-active {
+    opacity: 0;
 }
-
-/* home -------------------------- */
-.page-about.ng-leave        {
-    -webkit-animation:slideOutLeft 0.5s both ease-in;
-    -moz-animation:slideOutLeft 0.5s both ease-in;
-    animation:slideOutLeft 0.5s both ease-in;   
-}
-.page-about.ng-enter        {  
-    -webkit-animation:slideInRight 0.5s both ease-in;
-    -moz-animation:slideInRight 0.5s both ease-in;
-    animation:slideInRight 0.5s both ease-in;    
-}
-
-
-
-
-
 /*==================================END OF ANIMATIONS=================================================*/
 
 @font-face {
     font-family: bliz-quadrata;
     src: url(media_src/bliz-quadrata.woff);
 }
-
 .hs-font {
     font-family: bliz-quadrata;
 }
-
