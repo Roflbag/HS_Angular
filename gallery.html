@@ -138,11 +138,11 @@
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul class="col body_ul fadeInOut" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, playerClass:filterClass, rarity:filterRarity, collectible:true}|itemsPerPage:pageSize" current-page="currentPage">
+        <ul class="col body_ul fadeInOut" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, playerClass:filterClass, rarity:filterRarity, collectible:true}|orderBy:'cost':reverse|itemsPerPage:pageSize" current-page="currentPage">
 
             <!-- Card object grid -->
             <div class="col-sm-6 well">
-                <ul>
+                <ul>  
                     <h2 class="text-center hs-font">
                     {{card.name}} <span ng-class="{'gvg-icon':nameGvgIcon(card), 'naxx-icon':nameNaxxIcon(card)}"> </span> 
 
