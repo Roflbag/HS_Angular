@@ -204,19 +204,19 @@ em.rarity {
 /*==================================END OF ICONS=================================================*/
 /*===================================Animations==================================================*/
 
-.animation {
+.fadeInOut {
     -webkit-transition: 0.5s;
 }
-.animation.ng-enter {
+.fadeInOut.ng-enter {
     opacity: 0;
 }
-.animation.ng-leave {
+.fadeInOut.ng-leave {
     opacity: 1;
 }
-.animation.ng-enter.ng-enter-active {
+.fadeInOut.ng-enter.ng-enter-active {
     opacity: 1;
 }
-.animation.ng-leave.ng-leave-active {
+.fadeInOut.ng-leave.ng-leave-active {
     opacity: 0;
 }
 /*==================================END OF ANIMATIONS=================================================*/
