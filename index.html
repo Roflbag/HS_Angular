@@ -30,7 +30,7 @@
 
     <!--  Navbar in controller  -->
 
-    <nav class="navbar navbar_custom navbar-fixed-top">
+    <nav class="navbar_custom navbar-fixed-top">
         <div class="navbar_container">
 
 
@@ -39,9 +39,9 @@
                 <img alt="hsicon" ng-src="media_src/hs_icon.png" height="38px">
             </a>
             -->
-           
+
             <div class="row search pull-right ">
-             <a href="#about" class="btn btn-success col-sm-1 ">About</a>
+                <a href="#about" class="btn btn-success col-sm-1 ">About</a>
                 <div class="col-sm-4 ">
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-user"></span>
@@ -57,7 +57,7 @@
                     </div>
                     <!-- /input-group -->
                 </div>
-                
+
                 <div class="btn-group col-sm-3 ">
                     <button type="button" class="btn btn-danger">Filter by Race</button>
                     <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" ng-model="filterRace">
@@ -86,7 +86,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <div class="btn-group col-sm-4 ">
                     <button type="button" class="btn btn-danger">Filter by Class</button>
                     <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" ng-model="filterClass">
@@ -124,7 +124,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
 
 
 
@@ -138,7 +138,7 @@
     </nav>
 
     <!-- Navbar ended -->
-    <div class="container" >
+    <div class="container">
 
         <ul class="col body_ul animation" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, playerClass:filterClass, collectible:true}|itemsPerPage:pageSize" current-page="currentPage">
 

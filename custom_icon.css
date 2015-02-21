@@ -40,9 +40,17 @@
     height: 50px;
     top: 50%;
 }
+
+.navbar-item30{
+    width:30%;
+}
+
+
+
+
 .search {
     margin-top: 9px;
-    width: 60%;
+    width: 100%;
 }
 .body_ul {
     margin-top: 11px;
