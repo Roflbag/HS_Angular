@@ -1,5 +1,27 @@
 var app = angular.module('HearthStone_wiki', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngAnimate']);
 
+
+
+app.config(function($routeProvider){
+	$routeProvider
+		.when('/',
+			{
+				controller: 'hsController',
+				templateUrl: 'index.html'
+			})
+		.when('/about',
+			{
+				controller: 'aboutController',
+				templateUrl: 'about.html'
+			})
+		.otherwise({redirectTo:'/'});
+});
+
+
+app.controller('aboutController', function($scope) {
+    $scope.pageClass = 'page-about';
+});
+
 app.controller('OtherController', OtherController);
 
 function hsController($scope, $http) {
@@ -84,11 +106,6 @@ function hsController($scope, $http) {
     	
         return card.playerClass;
     }
-
-
-
-
-
 }
 
 function OtherController($scope) {
