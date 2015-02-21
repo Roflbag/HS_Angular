@@ -2,24 +2,24 @@ var app = angular.module('HearthStone_wiki', ['ngRoute', 'ui.bootstrap', 'angula
 
 
 
-app.config(function($routeProvider){
-	$routeProvider
-		.when('/',
-			{
-				controller: 'hsController',
-				templateUrl: 'index.html'
-			})
-		.when('/about',
-			{
-				controller: 'aboutController',
-				templateUrl: 'about.html'
-			})
-		.otherwise({redirectTo:'/'});
+app.config(function($routeProvider) {
+    $routeProvider
+        .when('/', {
+            controller: 'aboutController',
+            templateUrl: 'index.html'
+        })
+        .when('/gallery', {
+            controller: 'hsController',
+            templateUrl: 'gallery.html'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
 });
 
 
 app.controller('aboutController', function($scope) {
-    $scope.pageClass = 'page-about';
+
 });
 
 app.controller('OtherController', OtherController);
@@ -103,7 +103,7 @@ function hsController($scope, $http) {
     }
 
     $scope.getClass = function(card) {
-    	
+
         return card.playerClass;
     }
 }
