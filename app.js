@@ -31,7 +31,6 @@ function hsController($scope, $http) {
     $scope.pageSize = 4;
 
 
-
     $http.get("hs_data.json")
         .success(function(response) {
             $scope.basic = response["Basic"];
@@ -72,9 +71,9 @@ function hsController($scope, $http) {
     //Changes the Rarity text color based on card.rarity field; ng-style's parameter
     $scope.rarityColor = function(card) {
         if (card.rarity === "Free") {
-            return "grey";
-        } else if (card.rarity === "Common") {
             return "";
+        } else if (card.rarity === "Common") {
+            return "green";
         } else if (card.rarity === "Rare") {
             return "blue";
         } else if (card.rarity === "Epic") {
