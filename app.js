@@ -28,7 +28,7 @@ app.directive('disableNgAnimate', ['$animate', function($animate) {
 
 app.controller('aboutController', function($scope) {
 
-    $scope.myInterval = 5000;
+    $scope.myInterval = 9999999999999;
 
     $scope.slides = [
     {

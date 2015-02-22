@@ -228,3 +228,8 @@ em.rarity {
 .hs-font {
     font-family: bliz-quadrata;
 }
+.slides_control {
+    width: 48%;
+    height: 300px;
+    margin-left: 25%;
+}
