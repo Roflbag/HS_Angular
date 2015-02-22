@@ -17,34 +17,31 @@ app.config(function($routeProvider) {
         });
 });
 
+/*Disabling ngAnimate for carousel*/
 app.directive('disableNgAnimate', ['$animate', function($animate) {
-  return {
-    restrict: 'A',
-    link: function(scope, element) {
-      $animate.enabled(false, element);
-    }
-  };
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            $animate.enabled(false, element);
+        }
+    };
 }]);
 
 app.controller('aboutController', function($scope) {
 
-    $scope.myInterval = 9999999999999;
+    $scope.myInterval = 5000;
 
-    $scope.slides = [
-    {
-        image: 'http://3rd-strike.com/wp-content/uploads/2014/12/hearthstone-e1418840537516-588x250.jpg'
-        
-    },
+    $scope.slides = [{
+            image: 'http://3rd-strike.com/wp-content/uploads/2014/12/hearthstone-e1418840537516-588x250.jpg'
+        },
 
-    {
-        image: 'http://3rd-strike.com/wp-content/uploads/2014/04/7IL9MFZERRW51397077736991-588x250.jpg'
-       
-    },
+        {
+            image: 'http://3rd-strike.com/wp-content/uploads/2014/04/7IL9MFZERRW51397077736991-588x250.jpg'
+        },
 
-    {
-        image: 'http://3rd-strike.com/wp-content/uploads/2014/11/goblins-vs-gnomes-588x250.jpg'
-       
-    }
+        {
+            image: 'http://3rd-strike.com/wp-content/uploads/2014/11/goblins-vs-gnomes-588x250.jpg'
+        }
     ];
 });
 

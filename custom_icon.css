@@ -230,6 +230,9 @@ em.rarity {
 }
 .slides_control {
     width: 48%;
-    height: 300px;
-    margin-left: 25%;
+    height: 265px;
+    margin-left: 26%;
+}
+.index-body-relative {
+    position: relative;
 }
