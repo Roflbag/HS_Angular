@@ -236,3 +236,7 @@ em.rarity {
 .index-body-relative {
     position: relative;
 }
+
+.card-background{
+    background: url(media_src/cardbackground.jpg);
+}
