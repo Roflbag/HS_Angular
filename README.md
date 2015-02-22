@@ -1,4 +1,4 @@
-#Hearthstone Wiki in AngularJs, Bootstrap and more!
+###Hearthstone Wiki in AngularJs, Bootstrap and more!
 ---
 DEMO: http://roflbag.github.io/HS_Angular/
 
