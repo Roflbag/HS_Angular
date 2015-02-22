@@ -239,4 +239,5 @@ em.rarity {
 
 .card-background{
     background: url(media_src/cardbackground.jpg);
+    height: 488px;
 }
