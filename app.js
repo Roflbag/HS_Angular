@@ -60,6 +60,8 @@ function hsController($scope, $http) {
             $scope.basic.push.apply($scope.basic, response["Classic"]);
             $scope.basic.push.apply($scope.basic, response["Curse of Naxxramas"]);
             $scope.basic.push.apply($scope.basic, response["Goblins vs Gnomes"]);
+            $scope.basic.push.apply($scope.basic, response["Reward"]);
+            $scope.basic.push.apply($scope.basic, response["Promotion"]);
             console.log($scope.basic);
         });
 
