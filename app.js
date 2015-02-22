@@ -24,12 +24,12 @@ app.controller('aboutController', function($scope) {
 
     var slides = $scope.slides = [
     {
-        image: 'http://i.ytimg.com/vi/jYKkX3uxYr8/maxresdefault.jpg',
+        image: 'http://3rd-strike.com/wp-content/uploads/2014/12/hearthstone-e1418840537516-588x250.jpg',
         description: 'Classic!'
     },
 
     {
-        image: 'http://i.ytimg.com/vi/xzW-r8vIpJA/maxresdefault.jpg',
+        image: 'http://3rd-strike.com/wp-content/uploads/2014/04/7IL9MFZERRW51397077736991-588x250.jpg',
         description: 'Naxx!'
     },
 
