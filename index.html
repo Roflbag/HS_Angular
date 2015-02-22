@@ -47,17 +47,16 @@
             </a>
         </p>
 
-        <div style="height: 305px">
-            <carousel interval="myInterval">
-                <slide ng-repeat="slide in slides" active="slide.active">
-                    <img ng-src="{{slide.image}}" style="margin:auto;">
-                    <div class="carousel-caption">
-                        
-                        <p>{{slide.description}}</p>
-                    </div>
-                </slide>
-            </carousel>
-        </div>
+        <carousel  disable-ng-animate interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}?{{$index}}" style="margin:auto;" />
+                <div class="carousel-caption">
+                    <h4>Slide {{$index}}</h4>
+                    <p>{{slide.text}}</p>
+                </div>
+            </slide>
+        </carousel>
+
 
         <a href="#gallery" class="btn btn-primary btn-lg">Enter Card Gallery!</a>
     </div>

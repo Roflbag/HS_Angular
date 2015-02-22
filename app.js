@@ -17,25 +17,33 @@ app.config(function($routeProvider) {
         });
 });
 
+app.directive('disableNgAnimate', ['$animate', function($animate) {
+  return {
+    restrict: 'A',
+    link: function(scope, element) {
+      $animate.enabled(false, element);
+    }
+  };
+}]);
 
 app.controller('aboutController', function($scope) {
 
     $scope.myInterval = 5000;
 
-    var slides = $scope.slides = [
+    $scope.slides = [
     {
-        image: 'http://3rd-strike.com/wp-content/uploads/2014/12/hearthstone-e1418840537516-588x250.jpg',
-        description: 'Classic!'
+        image: 'http://3rd-strike.com/wp-content/uploads/2014/12/hearthstone-e1418840537516-588x250.jpg'
+        
     },
 
     {
-        image: 'http://3rd-strike.com/wp-content/uploads/2014/04/7IL9MFZERRW51397077736991-588x250.jpg',
-        description: 'Naxx!'
+        image: 'http://3rd-strike.com/wp-content/uploads/2014/04/7IL9MFZERRW51397077736991-588x250.jpg'
+       
     },
 
     {
-        image: 'http://3rd-strike.com/wp-content/uploads/2014/11/goblins-vs-gnomes-588x250.jpg',
-        description: 'GvG!'
+        image: 'http://3rd-strike.com/wp-content/uploads/2014/11/goblins-vs-gnomes-588x250.jpg'
+       
     }
     ];
 });
