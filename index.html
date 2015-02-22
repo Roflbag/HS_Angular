@@ -47,7 +47,17 @@
             </a>
         </p>
 
-
+        <div style="height: 305px">
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                        
+                        <p>{{slide.description}}</p>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
 
         <a href="#gallery" class="btn btn-primary btn-lg">Enter Card Gallery!</a>
     </div>

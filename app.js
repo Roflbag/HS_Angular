@@ -20,6 +20,24 @@ app.config(function($routeProvider) {
 
 app.controller('aboutController', function($scope) {
 
+    $scope.myInterval = 5000;
+
+    var slides = $scope.slides = [
+    {
+        image: 'http://i.ytimg.com/vi/jYKkX3uxYr8/maxresdefault.jpg',
+        description: 'Classic!'
+    },
+
+    {
+        image: 'http://i.ytimg.com/vi/xzW-r8vIpJA/maxresdefault.jpg',
+        description: 'Naxx!'
+    },
+
+    {
+        image: 'http://3rd-strike.com/wp-content/uploads/2014/11/goblins-vs-gnomes-588x250.jpg',
+        description: 'GvG!'
+    }
+    ];
 });
 
 app.controller('OtherController', OtherController);
