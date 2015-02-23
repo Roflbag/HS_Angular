@@ -161,6 +161,15 @@ function hsController($scope, $http) {
         }
     }
 
+    //Check if 'rarity' field is in card object
+    $scope.cardHasRarityField = function(card) {
+        if ('rarity' in card) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 
 function OtherController($scope) {

@@ -126,7 +126,8 @@
                     <button type="button" ng-model="filterCollectible" 
                     ng-class="{'btn btn-info':enableCollectible(filterCollectible), 
                                'btn btn-success':disableCollectible(filterCollectible)}"
-                    ng-click="filterCollectible = swapCollectible(filterCollectible)">{{collectibleBtnName(filterCollectible)}}</button>
+                    ng-click="filterCollectible = swapCollectible(filterCollectible)">
+                    {{collectibleBtnName(filterCollectible)}}</button>
                 </div>
             </div>
 
@@ -138,10 +139,13 @@
 
         <ul class="col body_ul fadeInOut" 
             dir-paginate="card in basic
-                          |filter:{name:filterName, race:filterRace, 
+                          |filter:{name:filterName, 
+                                   race:filterRace, 
                                    playerClass:filterClass, 
                                    rarity:filterRarity, 
-                                   collectible:filterCollectible}
+                                   collectible:filterCollectible,
+                                   type:'!Enchantment'
+                                   }
                           |orderBy:'cost':reverse
                           |itemsPerPage:pageSize" 
             current-page="currentPage">
@@ -190,8 +194,8 @@
                                         <em class="">Type: {{card.type}}</em>
                                     </li>
 
-                                    <li class="no-dot-li ">
-                                        <em class="rarity">Rarity: <b><div ng-style="{'color':rarityColor(card), 'display':'inline'}">{{card.rarity}}</div></b></em>
+                                    <li ng-show="cardHasRarityField(card)" class="no-dot-li ">
+                                        <em  class="rarity">Rarity: <b><div ng-style="{'color':rarityColor(card), 'display':'inline'}">{{card.rarity}}</div></b></em>
                                     </li>
                                 </div>
                                 <li class="no-dot-li">
