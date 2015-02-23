@@ -130,7 +130,8 @@
 
                 <div class="btn-group col-sm-3 fadeInOut pull-right">
                     <button type="button" ng-model="filterGold"
-                   
+                    ng-class="{'btn btn-info':enableButton(filterGold), 
+                               'btn btn-warning':disableGold(filterGold)}"
                     ng-click="filterGold = swapGold(filterGold)">
                         Gold</button>
                 </div>
@@ -150,8 +151,12 @@
                                    playerClass:filterClass, 
                                    rarity:filterRarity, 
                                    collectible:filterCollectible,
-                                   type:'!Enchantment'
+                                   type:'!Hero Power',
+                                   type:'Minion'
+
+                                   
                                    }
+                          
                           |orderBy:'cost':reverse
                           |itemsPerPage:pageSize" current-page="currentPage">
 
@@ -175,9 +180,6 @@
                     <div class="card-container">
                         <div class="col-md-8 ">
 
-                            
-                            
-                           
                             <img width="100%" ng-src="http://wow.zamimg.com/images/hearthstone/cards/enus/{{goldenDisplay1(filterGold)}}/{{card.id}}{{goldenDisplay2(filterGold)}}" alt="{{card.name}}">
 
                         </div>
@@ -221,10 +223,12 @@
     <nav class="navbar navbar_custom navbar-fixed-bottom">
         <div class="navbar_container">
             <!-- toggle collectible/non-collectible mode -->
-            <div class="row relative-row">
-                <div class="btn-group col-sm-3 fadeInOut pull-right">
-                    <button type="button" ng-model="filterCollectible" ng-class="{'btn btn-info':enableCollectible(filterCollectible), 
-                               'btn btn-warning':disableCollectible(filterCollectible)}" ng-click="filterCollectible = swapCollectible(filterCollectible)">
+            
+                <div class="btn-group col-sm-3 fadeInOut colletibleBtn pull-right">
+                    <button type="button" ng-model="filterCollectible" 
+                            ng-class="{'btn btn-info':enableButton(filterCollectible), 
+                               'btn btn-warning':disableCollectible(filterCollectible)}" 
+                            ng-click="filterCollectible = swapCollectible(filterCollectible)">
                         {{collectibleBtnName(filterCollectible)}}</button>
                 </div>
 
@@ -233,7 +237,7 @@
                         <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
                     </div>
                 </div>
-            </div>
+            
         </div>
     </nav>
     <!-- Image Gallery  -->

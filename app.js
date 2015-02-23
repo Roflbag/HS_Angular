@@ -1,7 +1,6 @@
 var app = angular.module('HearthStone_wiki', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngAnimate']);
 
 
-
 app.config(function($routeProvider) {
     $routeProvider
         .when('/', {
@@ -141,7 +140,7 @@ function hsController($scope, $http) {
         }
     }
 
-    $scope.enableCollectible = function(filterCollectible) {
+    $scope.enableButton = function(filterCollectible) {
         if (filterCollectible === true) {
             return true;
         }
@@ -153,11 +152,10 @@ function hsController($scope, $http) {
         }
     }
 
-    $scope.collectibleBtnName = function(filterCollectible){
+    $scope.collectibleBtnName = function(filterCollectible) {
         if (filterCollectible === true) {
             return "View Secret Cards!";
-        }
-        else if (filterCollectible === undefined){
+        } else if (filterCollectible === undefined) {
             return "Collectible Cards Only!"
         }
     }
@@ -175,7 +173,7 @@ function hsController($scope, $http) {
 
         if (filterGold === false) {
             return "original";
-        } else if (filterGold === true){
+        } else if (filterGold === true) {
             return "animated";
         }
     }
@@ -184,7 +182,7 @@ function hsController($scope, $http) {
 
         if (filterGold === false) {
             return ".png";
-        } else if (filterGold === true){
+        } else if (filterGold === true) {
             return "_premium.gif";
         }
     }
@@ -196,6 +194,23 @@ function hsController($scope, $http) {
             return true;
         }
     }
+
+    $scope.disableGold = function(filterGold) {
+        if (filterGold === false) {
+            return true;
+        }
+    }
+
+
+    $scope.noDisplayGoldenFilter = function(filterGold) {
+      if(filterGold===true){
+        return "'!Hero Power'";
+      }
+      else 
+        return "'!Hero Power'";
+
+    }
+
 
 
 }

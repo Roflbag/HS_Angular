@@ -251,7 +251,12 @@ em.rarity {
     top: 17%;
 }
 .centered {
-    position: absolute;
     right: 31%;
     top: -24%;
+    padding-left: 325px;
+}
+
+.colletibleBtn{
+    pull-right;
+    top: 40%;
 }

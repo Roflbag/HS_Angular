@@ -310,6 +310,7 @@
     }]);
 
     module.filter('itemsPerPage', ['paginationService', function(paginationService) {
+        
 
         return function(collection, itemsPerPage, paginationId) {
             if (typeof (paginationId) === 'undefined') {
