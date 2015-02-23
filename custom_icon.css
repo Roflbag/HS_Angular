@@ -236,8 +236,12 @@ em.rarity {
 .index-body-relative {
     position: relative;
 }
-
-.card-background{
+.card-background {
     background: url(media_src/cardbackground.jpg);
     height: 488px;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
 }

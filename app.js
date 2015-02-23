@@ -52,6 +52,8 @@ function hsController($scope, $http) {
 
     $scope.currentPage = 1;
     $scope.pageSize = 4;
+    $scope.filterCollectible = true;
+
 
 
     $http.get("hs_data.json")
@@ -127,9 +129,38 @@ function hsController($scope, $http) {
     }
 
     $scope.getClass = function(card) {
-
         return card.playerClass;
     }
+
+    $scope.swapCollectible = function(filterCollectible) {
+        if (filterCollectible === true) {
+            return undefined;
+        } else {
+            return true;
+        }
+    }
+
+    $scope.enableCollectible = function(filterCollectible) {
+        if (filterCollectible === true) {
+            return true;
+        }
+    }
+
+    $scope.disableCollectible = function(filterCollectible) {
+        if (filterCollectible === undefined) {
+            return true;
+        }
+    }
+
+    $scope.collectibleBtnName = function(filterCollectible){
+        if (filterCollectible === true) {
+            return "View Secret Cards!";
+        }
+        else if (filterCollectible === undefined){
+            return "Collectible Cards Only!"
+        }
+    }
+
 }
 
 function OtherController($scope) {

@@ -113,28 +113,42 @@
                         </li>
                         </li>
                         <li><a class="text-center" ng-click="filterRarity = 'Rare'">Rare</a>
-                        </li>     
+                        </li>
                         </li>
                         <li><a class="text-center" ng-click="filterRarity = 'Epic'">Epic</a>
-                        </li> 
+                        </li>
                         </li>
                         <li><a class="text-center" ng-click="filterRarity = 'Legendary'">Lengendary</a>
-                        </li>                
+                        </li>
                     </ul>
                 </div>
+                <div class="btn-group col-sm-2.5 fadeInOut">
+                    <button type="button" ng-model="filterCollectible" 
+                    ng-class="{'btn btn-info':enableCollectible(filterCollectible), 
+                               'btn btn-success':disableCollectible(filterCollectible)}"
+                    ng-click="filterCollectible = swapCollectible(filterCollectible)">{{collectibleBtnName(filterCollectible)}}</button>
+                </div>
             </div>
-        
+
         </div>
     </nav>
 
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul class="col body_ul fadeInOut" dir-paginate="card in basic|filter:{name:filterName, race:filterRace, playerClass:filterClass, rarity:filterRarity, collectible:true}|orderBy:'cost':reverse|itemsPerPage:pageSize" current-page="currentPage">
+        <ul class="col body_ul fadeInOut" 
+            dir-paginate="card in basic
+                          |filter:{name:filterName, race:filterRace, 
+                                   playerClass:filterClass, 
+                                   rarity:filterRarity, 
+                                   collectible:filterCollectible}
+                          |orderBy:'cost':reverse
+                          |itemsPerPage:pageSize" 
+            current-page="currentPage">
 
             <!-- Card object grid -->
             <div class="col-sm-6 well card-background">
-                <ul style="padding-left: 20px; ">  
+                <ul style="padding-left: 20px; ">
                     <h2 class="text-center hs-font">
                     {{card.name}} <span ng-class="{'gvg-icon':nameGvgIcon(card), 'naxx-icon':nameNaxxIcon(card)}"> </span> 
 
