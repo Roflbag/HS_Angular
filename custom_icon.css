@@ -59,6 +59,7 @@
 .other-controller {
     margin: -12px;
     padding: 0px;
+    height: 33px;
 }
 .other-controller small {
     color: #99c;
@@ -244,4 +245,13 @@ em.rarity {
     color: #fff;
     background-color: #d9534f;
     border-color: #d43f3a;
+}
+.relative-row {
+    position: relative;
+    top: 17%;
+}
+.centered {
+    position: absolute;
+    right: 31%;
+    top: -24%;
 }

@@ -122,20 +122,20 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <!-- clear search -->
                 <div class="btn-group col-sm-2.5 fadeInOut">
                     <button type="button" class="btn btn-danger" ng-click="filterRarity=undefined; filterRace=undefined; filterClass=undefined">X</button>
                 </div>
-                
-                <!-- toggle collectible/non-collectible mode -->
-                <div class="btn-group col-sm-2.5 fadeInOut">
-                    <button type="button" ng-model="filterCollectible" 
-                    ng-class="{'btn btn-info':enableCollectible(filterCollectible), 
-                               'btn btn-warning':disableCollectible(filterCollectible)}"
-                    ng-click="filterCollectible = swapCollectible(filterCollectible)">
-                    {{collectibleBtnName(filterCollectible)}}</button>
-                </div>            
+
+                <div class="btn-group col-sm-3 fadeInOut pull-right">
+                    <button type="button" ng-model="filterGold"
+                   
+                    ng-click="filterGold = swapGold(filterGold)">
+                        Gold</button>
+                </div>
+
+
             </div>
 
         </div>
@@ -144,8 +144,7 @@
     <!-- Navbar ended -->
     <div class="container">
 
-        <ul class="col body_ul fadeInOut" 
-            dir-paginate="card in basic
+        <ul class="col body_ul fadeInOut" dir-paginate="card in basic
                           |filter:{name:filterName, 
                                    race:filterRace, 
                                    playerClass:filterClass, 
@@ -154,8 +153,7 @@
                                    type:'!Enchantment'
                                    }
                           |orderBy:'cost':reverse
-                          |itemsPerPage:pageSize" 
-            current-page="currentPage">
+                          |itemsPerPage:pageSize" current-page="currentPage">
 
             <!-- Card object grid -->
             <div class="col-sm-6 well card-background">
@@ -177,7 +175,10 @@
                     <div class="card-container">
                         <div class="col-md-8 ">
 
-                            <img width="100%" ng-src="http://wow.zamimg.com/images/hearthstone/cards/enus/original/{{card.id}}.png" alt="{{card.name}}">
+                            
+                            
+                           
+                            <img width="100%" ng-src="http://wow.zamimg.com/images/hearthstone/cards/enus/{{goldenDisplay1(filterGold)}}/{{card.id}}{{goldenDisplay2(filterGold)}}" alt="{{card.name}}">
 
                         </div>
 
@@ -202,7 +203,7 @@
                                     </li>
 
                                     <li ng-show="cardHasRarityField(card)" class="no-dot-li ">
-                                        <em  class="rarity">Rarity: <b><div ng-style="{'color':rarityColor(card), 'display':'inline'}">{{card.rarity}}</div></b></em>
+                                        <em class="rarity">Rarity: <b><div ng-style="{'color':rarityColor(card), 'display':'inline'}">{{card.rarity}}</div></b></em>
                                     </li>
                                 </div>
                                 <li class="no-dot-li">
@@ -219,9 +220,18 @@
     <!-- page number sel-->
     <nav class="navbar navbar_custom navbar-fixed-bottom">
         <div class="navbar_container">
-            <div ng-controller="OtherController" class="other-controller ">
-                <div class="text-center">
-                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+            <!-- toggle collectible/non-collectible mode -->
+            <div class="row relative-row">
+                <div class="btn-group col-sm-3 fadeInOut pull-right">
+                    <button type="button" ng-model="filterCollectible" ng-class="{'btn btn-info':enableCollectible(filterCollectible), 
+                               'btn btn-warning':disableCollectible(filterCollectible)}" ng-click="filterCollectible = swapCollectible(filterCollectible)">
+                        {{collectibleBtnName(filterCollectible)}}</button>
+                </div>
+
+                <div ng-controller="OtherController" class="other-controller centered">
+                    <div class="text-center">
+                        <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+                    </div>
                 </div>
             </div>
         </div>

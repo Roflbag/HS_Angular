@@ -53,6 +53,7 @@ function hsController($scope, $http) {
     $scope.currentPage = 1;
     $scope.pageSize = 4;
     $scope.filterCollectible = true;
+    $scope.filterGold = false;
 
 
 
@@ -169,6 +170,33 @@ function hsController($scope, $http) {
             return false;
         }
     }
+
+    $scope.goldenDisplay1 = function(filterGold) {
+
+        if (filterGold === false) {
+            return "original";
+        } else if (filterGold === true){
+            return "animated";
+        }
+    }
+
+    $scope.goldenDisplay2 = function(filterGold) {
+
+        if (filterGold === false) {
+            return ".png";
+        } else if (filterGold === true){
+            return "_premium.gif";
+        }
+    }
+
+    $scope.swapGold = function(filterGold) {
+        if (filterGold === true) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 
 }
 
