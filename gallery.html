@@ -150,13 +150,9 @@
                                    race:filterRace, 
                                    playerClass:filterClass, 
                                    rarity:filterRarity, 
-                                   collectible:filterCollectible,
-                                   type:'!Enchantment'
-                                  
-
-                                   
+                                   collectible:filterCollectible,                                          
                                    }
-                          
+                          |filter:filterEnchantmentAndHP
                           |orderBy:'cost':reverse
                           |itemsPerPage:pageSize" current-page="currentPage">
 
