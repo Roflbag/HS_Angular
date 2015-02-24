@@ -257,6 +257,10 @@ em.rarity {
 }
 
 .colletibleBtn{
-    pull-right;
     top: 40%;
+}
+
+.noPaddingLeftRight{
+    padding-left: 0px;
+    padding-right: 0px;
 }
