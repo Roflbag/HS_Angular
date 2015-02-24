@@ -53,7 +53,7 @@ function hsController($scope, $http) {
     $scope.pageSize = 4;
     $scope.filterCollectible = true;
     $scope.filterGold = false;
-    
+
 
 
 
@@ -203,11 +203,12 @@ function hsController($scope, $http) {
     }
 
     //Custom filter for type Enchantment and Hero Power
-    $scope.filterEnchantmentAndHP= function(card) {
-        if ($scope.filterGold === false)
-        {return (card.type !== 'Enchantment');}
-        else if ($scope.filterGold === true)
-        {return ((card.type !== 'Enchantment') && (card.type !== 'Hero Power'));}
+    $scope.filterEnchantmentAndHP = function(card) {
+        if ($scope.filterGold === false) {
+            return (card.type !== 'Enchantment');
+        } else if ($scope.filterGold === true) {
+            return ((card.type !== 'Enchantment') && (card.type !== 'Hero Power'));
+        }
     }
 
     $scope.goldBtnName = function(filterGold) {
@@ -217,6 +218,16 @@ function hsController($scope, $http) {
             return "Normal Cards"
         }
     }
+
+    $scope.collectibleText = function(card) {
+        if (card.collectible === true) {
+            return "Collectible";
+        } else {
+            return "Not Collectible"
+        }
+    }
+
+
 
 
 
