@@ -53,6 +53,7 @@ function hsController($scope, $http) {
     $scope.pageSize = 4;
     $scope.filterCollectible = true;
     $scope.filterGold = false;
+    $scope.filterEnchantment = "Enchantment";
 
 
 
@@ -202,15 +203,11 @@ function hsController($scope, $http) {
     }
 
 
-    $scope.noDisplayGoldenFilter = function(filterGold) {
-      if(filterGold===true){
-        return "'!Hero Power'";
-      }
-      else 
-        return "'!Hero Power'";
-
-    }
-
+    $scope.noGoldenDisplay = function(filterEnchantment) {
+        return function(item) {
+            return item.name === criteria.name;
+        };
+    };
 
 
 }
