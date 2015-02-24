@@ -210,6 +210,14 @@ function hsController($scope, $http) {
         {return ((card.type !== 'Enchantment') && (card.type !== 'Hero Power'));}
     }
 
+    $scope.goldBtnName = function(filterGold) {
+        if (filterGold === false) {
+            return "Gold Cards";
+        } else if (filterGold === true) {
+            return "Normal Cards"
+        }
+    }
+
 
 
 }

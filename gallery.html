@@ -31,8 +31,8 @@
                 </div>
 
                 <div class="btn-group col-sm-2 noPaddingLeftRight">
-                    <button type="button" class="btn btn-danger">Filter by Race</button>
-                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" ng-model="filterRace">
+                    <button type="button" class="btn btn-primary">Filter by Race</button>
+                    <button type="button" class="btn btn-default dropdown-toggle fadeInOut" data-toggle="dropdown" aria-expanded="false" ng-model="filterRace">
                         {{filterRace}} <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
@@ -59,9 +59,9 @@
                     </ul>
                 </div>
 
-                <div class="btn-group col-sm-2 noPaddingLeftRight">
-                    <button type="button" class="btn btn-danger">Filter by Class</button>
-                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" ng-model="filterClass">
+                <div class="btn-group col-sm-2 noPaddingLeftRight" style=" width: 202px;">
+                    <button type="button" class="btn btn-primary">Filter by Class</button>
+                    <button type="button" class="btn btn-default dropdown-toggle fadeInOut" data-toggle="dropdown" aria-expanded="false" ng-model="filterClass">
                         {{filterClass}} <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
@@ -98,8 +98,8 @@
                 </div>
 
                 <div class="btn-group col-sm-2 noPaddingLeftRight" style="width: 255px;">
-                    <button type="button" class="btn btn-danger">Filter by Rarity</button>
-                    <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" ng-model="filterRarity">
+                    <button type="button" class="btn btn-primary">Filter by Rarity</button>
+                    <button type="button" class="btn btn-default dropdown-toggle fadeInOut" data-toggle="dropdown" aria-expanded="false" ng-model="filterRarity">
                         {{filterRarity}} <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
@@ -124,16 +124,16 @@
                 </div>
 
                 <!-- clear search -->
-                <div class="btn-group col-sm-1 noPaddingLeftRight fadeInOut" style="width: 23px;">
-                    <button type="button" class="btn btn-danger" ng-click="filterRarity=undefined; filterRace=undefined; filterClass=undefined">X</button>
+                <div class="btn-group col-sm-1 noPaddingLeftRight fadeInOut" style="width: 30px; right: 2%;">
+                    <button type="button" class="btn btn-danger" ng-click="filterRarity=undefined; filterRace=undefined; filterClass=undefined"><span class="glyphicon glyphicon-refresh"></span></button>
                 </div>
 
-                <div class="btn-group col-sm-1 fadeInOut  ">
+                <div class="btn-group col-sm-1 fadeInOut noPaddingLeftRight">
                     <button type="button" ng-model="filterGold"
-                    ng-class="{'btn btn-info':enableButton(filterGold), 
+                    ng-class="{'btn btn-default':enableButton(filterGold), 
                                'btn btn-warning':disableGold(filterGold)}"
                     ng-click="filterGold = swapGold(filterGold)">
-                        Gold</button>
+                        {{goldBtnName(filterGold)}}</button>
                 </div>
 
 
