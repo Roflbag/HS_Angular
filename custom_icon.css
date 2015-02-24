@@ -72,7 +72,7 @@
 .card-flavor-position {
     position: absolute;
     left: 0px;
-    bottom: 0%;
+    bottom: -8%;
     width: 220px;
 }
 .card-container {
