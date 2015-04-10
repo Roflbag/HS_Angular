@@ -57,7 +57,7 @@ function hsController($scope, $http) {
 
 
 
-    $http.get("hs_data.json")
+    $http.get("AllSets.json")
         .success(function(response) {
             $scope.basic = response["Basic"];
             $scope.basic.push.apply($scope.basic, response["Classic"]);
@@ -65,6 +65,7 @@ function hsController($scope, $http) {
             $scope.basic.push.apply($scope.basic, response["Goblins vs Gnomes"]);
             $scope.basic.push.apply($scope.basic, response["Reward"]);
             $scope.basic.push.apply($scope.basic, response["Promotion"]);
+            $scope.basic.push.apply($scope.basic, response["Blackrock Mountain"]);
             console.log($scope.basic);
         });
 
@@ -123,6 +124,14 @@ function hsController($scope, $http) {
     //true if the card is from Naxx pack by checking if "GVG" is a substring in card.id
     $scope.nameNaxxIcon = function(card) {
         if (card.id.indexOf("FP") >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+     $scope.nameBrmIcon = function(card) {
+        if (card.id.indexOf("BRM") >= 0) {
             return true;
         } else {
             return false;

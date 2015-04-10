@@ -160,7 +160,12 @@
             <div class="col-sm-6 well card-background">
                 <ul style="padding-left: 20px; ">
                     <h2 class="text-center hs-font">
-                    {{card.name}} <span ng-class="{'gvg-icon':nameGvgIcon(card), 'naxx-icon':nameNaxxIcon(card)}"> </span> 
+                    {{card.name}} 
+                    <span ng-class="{
+                    'gvg-icon':nameGvgIcon(card), 
+                    'naxx-icon':nameNaxxIcon(card),
+                    'brm-icon':nameBrmIcon(card)
+                    }"> </span> 
 
                     <span ng-class="{'druid-icon': 'Druid'===getClass(card),
                                      'hunter-icon': 'Hunter'===getClass(card),
