@@ -40,7 +40,11 @@ app.controller('aboutController', function($scope) {
 
         {
             image: 'http://3rd-strike.com/wp-content/uploads/2014/11/goblins-vs-gnomes-588x250.jpg'
+        },
+        {
+            image: 'media_src/Blackrock_Mountain_banner.jpg'
         }
+
     ];
 });
 
@@ -129,7 +133,7 @@ function hsController($scope, $http) {
             return false;
         }
     }
-    
+
      $scope.nameBrmIcon = function(card) {
         if (card.id.indexOf("BRM") >= 0) {
             return true;
