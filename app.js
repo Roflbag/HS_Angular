@@ -75,10 +75,7 @@ function hsController($scope, $http) {
 
     //for ng-show, show collectible cards only
     $scope.showCard = function(card) {
-        if (card.collectible === true) {
-            return true;
-        }
-        return false;
+        return card.collectible;
     }
 
     //for ng-show, show attack even if the card has 0 attack. Don't show if its a spell
@@ -91,10 +88,7 @@ function hsController($scope, $http) {
 
     //for ng-show, show cost even if the card has 0 cost. Show for spells
     $scope.showZeroCost = function(card) {
-        if (card.cost >= 0) {
-            return true;
-        }
-        return false;
+        return card.cost >= 0);
     }
 
     $scope.test = function() {
@@ -239,11 +233,6 @@ function hsController($scope, $http) {
             return "Not Collectible"
         }
     }
-
-
-
-
-
 }
 
 function OtherController($scope) {
